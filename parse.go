@@ -2,31 +2,30 @@ package ff
 
 import (
 	"bufio"
-	"flag"
 	"fmt"
 	"io"
 	"os"
 	"strings"
+
+	flag "github.com/spf13/pflag"
 )
 
 // Parse the flags in the flag set from the provided (presumably commandline)
 // args. Additional options may be provided to parse from a config file and/or
 // environment variables in that priority order.
-func Parse(fs *flag.FlagSet, args []string, options ...Option) error {
+func Parse(fs *flag.FlagSet, options ...Option) error {
 	var c Context
 	for _, option := range options {
 		option(&c)
-	}
-
-	// First priority: commandline flags (explicit user preference).
-	if err := fs.Parse(args); err != nil {
-		return fmt.Errorf("error parsing commandline args: %w", err)
 	}
 
 	provided := map[string]bool{}
 	fs.Visit(func(f *flag.Flag) {
 		provided[f.Name] = true
 	})
+
+	//Remvoed the args[] parsing here. I would prefer to move all argument parsing / loading to be definable via options.
+	//This would allow for more flexibility in how the arguments are parsed.
 
 	// Second priority: environment variables (session).
 	if parseEnv := c.envVarPrefix != "" || c.envVarNoPrefix; parseEnv {
@@ -112,10 +111,6 @@ func Parse(fs *flag.FlagSet, args []string, options ...Option) error {
 			return err
 		}
 	}
-
-	fs.Visit(func(f *flag.Flag) {
-		provided[f.Name] = true
-	})
 
 	return nil
 }

@@ -3,9 +3,10 @@ package deletecmd
 import (
 	"context"
 	"errors"
-	"flag"
 	"fmt"
 	"io"
+
+	flag "github.com/spf13/pflag"
 
 	"github.com/peterbourgon/ff/v3/ffcli"
 	"github.com/peterbourgon/ff/v3/ffcli/examples/objectctl/pkg/rootcmd"

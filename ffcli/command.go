@@ -3,10 +3,11 @@ package ffcli
 import (
 	"context"
 	"errors"
-	"flag"
 	"fmt"
 	"strings"
 	"text/tabwriter"
+
+	flag "github.com/spf13/pflag"
 
 	"github.com/peterbourgon/ff/v3"
 )

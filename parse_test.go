@@ -2,7 +2,6 @@ package ff_test
 
 import (
 	"context"
-	"flag"
 	"os"
 	"testing"
 	"time"
@@ -10,6 +9,7 @@ import (
 	"github.com/peterbourgon/ff/v3"
 	"github.com/peterbourgon/ff/v3/ffcli"
 	"github.com/peterbourgon/ff/v3/fftest"
+	flag "github.com/spf13/pflag"
 )
 
 func TestParseBasics(t *testing.T) {

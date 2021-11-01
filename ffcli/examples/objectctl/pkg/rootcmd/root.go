@@ -2,7 +2,8 @@ package rootcmd
 
 import (
 	"context"
-	"flag"
+
+	flag "github.com/spf13/pflag"
 
 	"github.com/peterbourgon/ff/v3/ffcli"
 	"github.com/peterbourgon/ff/v3/ffcli/examples/objectctl/pkg/objectapi"

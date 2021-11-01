@@ -2,7 +2,7 @@ package main
 
 import (
 	"context"
-	"flag"
+	flag "github.com/spf13/pflag""flag"
 	"fmt"
 	"os"
 

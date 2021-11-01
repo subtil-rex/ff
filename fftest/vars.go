@@ -2,11 +2,12 @@ package fftest
 
 import (
 	"errors"
-	"flag"
 	"reflect"
 	"strings"
 	"testing"
 	"time"
+
+	flag "github.com/spf13/pflag"
 )
 
 // Pair defines and returns an empty flag set and vars assigned to it.

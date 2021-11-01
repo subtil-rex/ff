@@ -2,11 +2,12 @@ package listcmd
 
 import (
 	"context"
-	"flag"
 	"fmt"
 	"io"
 	"text/tabwriter"
 	"time"
+
+	flag "github.com/spf13/pflag"
 
 	"github.com/peterbourgon/ff/v3/ffcli"
 	"github.com/peterbourgon/ff/v3/ffcli/examples/objectctl/pkg/rootcmd"

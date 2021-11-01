@@ -1,10 +1,11 @@
 package fftoml_test
 
 import (
-	"flag"
 	"reflect"
 	"testing"
 	"time"
+
+	flag "github.com/spf13/pflag"
 
 	"github.com/peterbourgon/ff/v3"
 	"github.com/peterbourgon/ff/v3/fftest"
